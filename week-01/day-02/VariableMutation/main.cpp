@@ -121,8 +121,9 @@ int main(int argc, char* args[]) {
     std::string k = "Apple";
     //fill the k variable with its content 4 times
 
+    k = k + k + k + k + k;
 
-    std::cout << k << k << k << k << k << std::endl;
+    std::cout << k << std::endl;
 
     return 0;
 }
