@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+void appendAFunc (std::string something);
+
 int main(int argc, char* args[]) {
 
     // - Create a string variable named `typo` and assign the value `Chinchill` to it
@@ -9,5 +11,15 @@ int main(int argc, char* args[]) {
     //
     // - Print the result of `appendAFunc(typo)`
 
+    std::string typo = "Chinchill";
+
+    appendAFunc(typo);
+
     return 0;
+}
+
+void appendAFunc (std::string something) {
+
+    std::cout << something << "a" << std::endl;
+
 }
