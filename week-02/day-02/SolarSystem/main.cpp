@@ -4,7 +4,11 @@
 
 std::vector<std::string> putSaturn(const std::vector<std::string>& planets)
 {
+    std::vector<std::string> temp;
+    copy(planets.begin(),planets.end(),back_inserter(temp));
+    temp.insert(temp.begin()+5, 1, "Saturn");
 
+    return temp;
 }
 
 int main(int argc, char* args[])
@@ -18,8 +22,11 @@ int main(int argc, char* args[])
     // Expected output: Mercury Venus Earth Mars Jupiter Uranus Neptune Saturn
     for(const auto& planet : putSaturn(planets))
     {
+
         std::cout << planet << " ";
+
     }
+
 
     return 0;
 }
