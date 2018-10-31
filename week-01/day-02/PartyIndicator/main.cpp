@@ -30,18 +30,18 @@ int main(int argc, char* args[]) {
 
     int people = boys + girls;
 
-    if (people > 19 && boys == girls) {
+    if (girls ==0) {
 
-        std::cout <<"This party is excellent! ";
+        std::cout <<"Sausage party";
     } else if (people > 19 && boys != girls) {
 
         std::cout <<"Quite cool party! ";
     } else if (people < 20) {
 
         std::cout <<"Average party... ";
-    } else if (girls ==0) {
+    } else if (people > 19 && boys == girls) {
 
-        std::cout <<"Sausage party";
+        std::cout <<"This party is excellent! ";
     }
 
     return 0;
