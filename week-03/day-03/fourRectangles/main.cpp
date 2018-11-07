@@ -1,12 +1,13 @@
+// Exercise:
+// draw four different size and color rectangles.
+// avoid code duplication.
+
 #include <iostream>
 #include <SDL.h>
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
-
-//Draws geometry on the canvas
-void draw();
 
 //Starts up SDL and creates window
 bool init();
@@ -20,20 +21,6 @@ SDL_Window* gWindow = nullptr;
 //The window renderer
 SDL_Renderer* gRenderer = nullptr;
 
-void draw()
-{
-    // Draw the canvas' diagonals.
-    // If it starts from the upper-left corner it should be green, otherwise it should be red.
-
-
-
-    SDL_SetRenderDrawColor(gRenderer, 0, 0xFF, 0, 0xFF);
-    SDL_RenderDrawLine(gRenderer, 0 , 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-
-    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0, 0, 0xFF);
-    SDL_RenderDrawLine(gRenderer, 0 , SCREEN_HEIGHT, SCREEN_WIDTH, 0);
-}
-
 bool init()
 {
     //Initialize SDL
@@ -44,7 +31,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Diagonals", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Four rectangles", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
@@ -106,7 +93,28 @@ int main( int argc, char* args[] )
         SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
         SDL_RenderClear(gRenderer);
 
-        draw();
+        //--------------------------------------------
+        //This is where you can start drawing geometry
+        //--------------------------------------------
+
+
+        int x = 400;
+        int y = 400;
+
+        int color = 255;
+
+
+        for (int i = 0; i < 4; i ++) {
+
+            color -= 20;
+            x -= 50;
+            y -= 50;
+
+            SDL_SetRenderDrawColor(gRenderer, color, color, color, 0xFF);
+            SDL_Rect fillRect = {SCREEN_WIDTH / 2 - (x/2), SCREEN_HEIGHT / 2 - (y/2), x, y};
+            SDL_RenderFillRect(gRenderer, &fillRect);
+
+        }
 
         //Update screen
         SDL_RenderPresent(gRenderer);

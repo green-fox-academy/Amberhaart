@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(CHANGE THIS)
+project(rainbowBoxes)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -15,6 +15,6 @@ include_directories(${SDL2_GFX}/inc)
 file(GLOB gfx_inc "${SDL2_GFX}/inc/*.h")
 file(GLOB gfx_src "${SDL2_GFX}/src/*.c")
 
-add_executable(CHANGE THIS main.cpp ${gfx_inc} ${gfx_src})
+add_executable(rainbowBoxes main.cpp ${gfx_inc} ${gfx_src})
 
-target_link_libraries(CHANGE THIS ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARIES} ${SDL2_TTF_LIBRARIES})
+target_link_libraries(rainbowBoxes ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARIES} ${SDL2_TTF_LIBRARIES})

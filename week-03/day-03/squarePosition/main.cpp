@@ -22,16 +22,32 @@ SDL_Renderer* gRenderer = nullptr;
 
 void draw()
 {
-    // Draw the canvas' diagonals.
-    // If it starts from the upper-left corner it should be green, otherwise it should be red.
+    // create a square drawing function that takes 2 parameters:
+    // the x and y coordinates of the square's top left corner
+    // and draws a 50x50 square from that point.
+    // draw at least 3 squares with that function.
+    // avoid code duplication.
 
 
+    int x = 0;
+    int y = 0;
 
-    SDL_SetRenderDrawColor(gRenderer, 0, 0xFF, 0, 0xFF);
-    SDL_RenderDrawLine(gRenderer, 0 , 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    int squareLength = 50;
 
-    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0, 0, 0xFF);
-    SDL_RenderDrawLine(gRenderer, 0 , SCREEN_HEIGHT, SCREEN_WIDTH, 0);
+  for (int i = 0; i < 9; i ++) {
+
+
+      SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xC8, 0x00, 0xFF);
+
+      SDL_Rect fillRect = {x, y, squareLength, squareLength};
+
+      SDL_RenderFillRect(gRenderer, &fillRect);
+
+      x += squareLength;
+      y += squareLength;
+
+  }
+
 }
 
 bool init()
@@ -44,7 +60,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Diagonals", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Position square", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
