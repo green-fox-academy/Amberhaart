@@ -1,8 +1,5 @@
 #include <iostream>
 #include <SDL.h>
-#include <time.h>
-#include <stdlib.h>
-#include <cstdlib>
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
@@ -25,28 +22,49 @@ SDL_Renderer* gRenderer = nullptr;
 
 void draw()
 {
-    // Create a square drawing function that takes 2 parameters:
-    // The square size, and the fill color,
-    // and draws a square of that size and color to the center of the canvas.
-    // Create a loop that fills the canvas with rainbow colored squares.
+    // Reproduce this:
+    // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
+    // Pay attention for the outlines as well
 
-    srand(time(nullptr));
+    int x = 0;
+    int y = 0;
 
-    int squareSize = 700;
+    int size = 10;
 
-    for (int i = 0; i < 10; i ++) {
+    for (int i = 0; i < 6; i ++) {
+
+        size += 10;
+        x += size;
+        y += size;
 
 
+        SDL_SetRenderDrawColor(gRenderer, 0x99, 0x00, 0xC8, 0xFF);
 
-        //choose color
-        SDL_SetRenderDrawColor(gRenderer, rand() % 255 + 1, rand() % 255 + 1, rand() % 255 + 1, 0xFF);
-//create a rectangle
-        SDL_Rect fillRect = {SCREEN_WIDTH / 2 - (squareSize / 2), SCREEN_HEIGHT / 2 - (squareSize / 2), squareSize,
-                             squareSize};
-//draw rectangle
+        SDL_Rect fillRect = {x, y, size, size};
+
         SDL_RenderFillRect(gRenderer, &fillRect);
 
-        squareSize -= 70;
+
+    }
+
+    x = 0;
+    y = 0;
+    size = 10;
+
+    for (int i = 0; i < 6; i ++) {
+
+
+        size += 10;
+        x += size;
+        y += size;
+
+
+        SDL_SetRenderDrawColor(gRenderer, 0xC8, 0x00, 0xC8, 0xFF);
+
+        SDL_Rect fillRect = {x+1, y+1, size-2, size-2};
+
+        SDL_RenderFillRect(gRenderer, &fillRect);
+
 
     }
 
@@ -62,7 +80,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Rainbow box function", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Purple steps", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
