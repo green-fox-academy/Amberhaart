@@ -7,11 +7,11 @@ int main() {
 
     Station station(1000);
 
-    Car audi(13, 50);
-    Car volkswagen(20, 60);
-    Car opel(30, 55);
-    Car dacia(10, 35);
-    Car bmw(20, 70);
+    Car audi(13, 70);
+    Car volkswagen(20, 50);
+    Car opel(30, 60);
+    Car dacia(10, 65);
+    Car bmw(20, 75);
 
     station.fill(audi);
     station.fill(volkswagen);

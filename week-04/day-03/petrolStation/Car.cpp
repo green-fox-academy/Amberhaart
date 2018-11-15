@@ -3,8 +3,8 @@
 #include <iostream>
 
 Car::Car(int gasAmount, int capacity) {
-    gasAmount = _gasAmount;
-    capacity = _capacity;
+     _gasAmount = gasAmount;
+     _capacity = capacity;
 }
 
 bool Car::isFull() {
@@ -12,7 +12,7 @@ bool Car::isFull() {
 }
 
 void Car::fill() {
-    if (!isFull()) {
+    {
         _gasAmount++;
     }
 }
