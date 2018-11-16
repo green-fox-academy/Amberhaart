@@ -1,13 +1,11 @@
 #include <iostream>
 #include <SDL.h>
+#include <SDL2_gfxPrimitives.h>
+
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
-
-//Draws geometry on the canvas
-void draw();
-
+const int SCREEN_HEIGHT = 640;
 
 //Starts up SDL and creates window
 bool init();
@@ -15,28 +13,13 @@ bool init();
 //Frees media and shuts down SDL
 void close();
 
+void draw();
+
 //The window we'll be rendering to
 SDL_Window *gWindow = nullptr;
 
 //The window renderer
 SDL_Renderer *gRenderer = nullptr;
-
-void draw() {
-    // draw a red horizontal line to the canvas' middle.
-    // draw a green vertical line to the canvas' middle.
-
-    SDL_SetRenderDrawColor(gRenderer, 0, 0, 0, 255);
-
-    SDL_RenderClear(gRenderer);
-
-    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
-
-    SDL_RenderDrawLine(gRenderer, SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2, SCREEN_HEIGHT);
-
-    SDL_SetRenderDrawColor(gRenderer, 0x00, 0xFF, 0x00, 0xFF);
-
-    SDL_RenderDrawLine(gRenderer, 0, SCREEN_HEIGHT / 2, SCREEN_WIDTH, SCREEN_HEIGHT / 2);
-}
 
 bool init() {
     //Initialize SDL
@@ -46,7 +29,7 @@ bool init() {
     }
 
     //Create window
-    gWindow = SDL_CreateWindow("Line in the middle", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
+    gWindow = SDL_CreateWindow("Tree", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
                                SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
     if (gWindow == nullptr) {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
@@ -76,6 +59,22 @@ void close() {
     SDL_Quit();
 }
 
+void draw(Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2, int depth) {
+    if (depth == 10) {
+        return;
+    }
+
+    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xCA, 0x00 , 0xFF);
+    SDL_RenderDrawLine(gRenderer, x1, y1, x2, y2);
+
+    draw(x2, y2, x2, Sint16 (y2 * 0.8), depth +1);
+    draw(x2, y2, Sint16 (x2 + (x2 / 4)), Sint16 (y2 * 1.2), depth +1);
+    draw(x2, y2, Sint16 (x2 - (x2 / 4)), Sint16 (y2 * 1.2), depth +1);
+
+
+}
+
+
 int main(int argc, char *args[]) {
     //Start up SDL and create window
     if (!init()) {
@@ -101,10 +100,12 @@ int main(int argc, char *args[]) {
         }
 
         //Clear screen
-        SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+        SDL_SetRenderDrawColor(gRenderer, 0x00, 0x25, 0x35, 0xFF);
         SDL_RenderClear(gRenderer);
 
-        draw();
+        SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0x00, 0xFF);
+
+        draw(SCREEN_WIDTH / 2, Sint16 (SCREEN_HEIGHT * 0.9), SCREEN_WIDTH / 2, Sint16 (SCREEN_HEIGHT * 0.7), 0);
 
         //Update screen
         SDL_RenderPresent(gRenderer);
