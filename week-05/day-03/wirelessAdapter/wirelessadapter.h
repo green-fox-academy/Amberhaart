@@ -1,0 +1,14 @@
+//
+// Created by Roland on 11/21/18.
+//
+
+#ifndef WIRELESSADAPTER_WIRELESSADAPTER_H
+#define WIRELESSADAPTER_WIRELESSADAPTER_H
+
+
+class wirelessadapter {
+
+};
+
+
+#endif //WIRELESSADAPTER_WIRELESSADAPTER_H
