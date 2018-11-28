@@ -14,7 +14,7 @@ public:
     void play() override;
 
 protected:
-    void sound() override;
+    std::string sound() override;
 };
 
 

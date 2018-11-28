@@ -1,13 +1,15 @@
-//
-// Created by Roland on 11/21/18.
-//
-
 #ifndef WIRELESSADAPTER_WIRELESSADAPTER_H
 #define WIRELESSADAPTER_WIRELESSADAPTER_H
 
 
-class wirelessadapter {
+#include "usbdevice.h"
+#include "networkdevice.h"
 
+class WirelessAdapter : public USBDevice, public NetworkDevice {
+public:
+    WirelessAdapter(int id, int usbType, int id1, int bandWidth);
+
+    void info();
 };
 
 

@@ -6,7 +6,7 @@
 
 class StringedInstruments : public Instrument {
 public:
-    virtual void sound() = 0;
+    virtual std::string sound() = 0;
 
 protected:
     int _numberOfStrings;

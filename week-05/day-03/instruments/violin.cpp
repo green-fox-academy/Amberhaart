@@ -11,10 +11,10 @@ Violin::Violin(int numberOfStrings) {
 }
 
 void Violin::play() {
-    std::cout << _name << ", a " << _numberOfStrings << " stringed instrument that goes ";
-    sound();
+    std::cout << _name << ", a " << _numberOfStrings << " stringed instrument that goes " << sound() << std::endl;
+
 }
 
-void Violin::sound() {
-    std::cout << "Screech\n";
+std::string Violin::sound() {
+    return "Screech\n";
 }

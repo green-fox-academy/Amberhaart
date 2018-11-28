@@ -1,12 +1,22 @@
-//
-// Created by Roland on 11/21/18.
-//
-
 #ifndef WIRELESSADAPTER_USBDEVICE_H
 #define WIRELESSADAPTER_USBDEVICE_H
 
+#include <iostream>
 
-class usbdevice {
+#include "device.h"
+
+enum class USBType {
+    USB_TYPE_2,
+    USB_TYPE_3
+};
+
+class USBDevice : virtual public Device {
+protected:
+    USBType _usbType;
+    std::string usbToString;
+
+public:
+    USBDevice(int id, USBType usbType);
 
 };
 

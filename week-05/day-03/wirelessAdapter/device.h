@@ -1,13 +1,14 @@
-//
-// Created by Roland on 11/21/18.
-//
-
 #ifndef WIRELESSADAPTER_DEVICE_H
 #define WIRELESSADAPTER_DEVICE_H
 
+class Device {
+public:
+    Device(int id);
 
-class device {
+    int getId() const;
 
+protected:
+    int _id;
 };
 
 

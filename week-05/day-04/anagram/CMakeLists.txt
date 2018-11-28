@@ -3,4 +3,10 @@ project(anagram)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(anagram main.cpp anagram_test/anagramtest.cpp anagram/anagram.cpp anagram/anagram.h)
+add_executable(anagram_run main.cpp)
+
+include_directories(anagram)
+add_subdirectory(anagram)
+add_subdirectory(anagram_test)
+
+target_link_libraries(anagram_run anagram)

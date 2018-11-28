@@ -1,4 +1,7 @@
-//
-// Created by Roland on 11/22/18.
-//
+#include <gtest/gtest.h>
+#include "anagram.h"
 
+
+TEST(anagram_check, test_anagram){
+    EXPECT_EQ(anagram("god", "dog"), true);
+}

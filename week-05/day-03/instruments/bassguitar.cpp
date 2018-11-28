@@ -11,10 +11,10 @@ BassGuitar::BassGuitar(int numberOfStrings) {
 }
 
 void BassGuitar::play() {
-    std::cout << _name << ", a " << _numberOfStrings << " stringed instrument that goes ";
-    sound();
+    std::cout << _name << ", a " << _numberOfStrings << " stringed instrument that goes " << sound() << std::endl;
+
 }
 
-void BassGuitar::sound() {
-    std::cout << "Duum-duum-duum\n";
+std::string BassGuitar::sound() {
+    return "Duum-duum-duum\n";
 }

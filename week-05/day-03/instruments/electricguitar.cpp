@@ -11,10 +11,9 @@ ElectricGuitar::ElectricGuitar(int numberOfStrings) {
 }
 
 void ElectricGuitar::play() {
-    std::cout << _name << ", a " << _numberOfStrings << " stringed instrument that goes ";
-    sound();
+    std::cout << _name << ", a " << _numberOfStrings << " stringed instrument that goes " << sound() <<std::endl;
 }
 
-void ElectricGuitar::sound() {
-    std::cout << "Twang\n";
+std::string ElectricGuitar::sound() {
+    return "Twang\n";
 }
