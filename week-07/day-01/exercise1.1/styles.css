@@ -1,0 +1,23 @@
+div{
+    height:900px ;
+    width:900px ;
+    display: flex;
+}
+
+.item-green{
+    height: 300px;
+    width: 300px;
+    background: green;
+}
+
+.item-yellow{
+    height: 300px;
+    width: 300px;
+    background: yellow;
+    }
+
+.item-purple{
+    height: 300px;
+    width: 300px;
+    background: purple;
+}   

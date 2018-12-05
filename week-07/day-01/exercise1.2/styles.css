@@ -1,0 +1,26 @@
+div{
+    height:900px ;
+    width:900px ;
+    display: flex;
+}
+
+.item-green{
+    height: 300px;
+    min-width: 100px;
+    flex-grow: 1;
+    background: green;
+}
+
+.item-yellow{
+    height: 300px;
+    min-width: 100px;
+    flex-grow: 2;
+    background: yellow;
+    }
+
+.item-purple{
+    height: 300px;
+    min-width: 100px;
+    flex-grow: 1;
+    background: purple;
+}   
