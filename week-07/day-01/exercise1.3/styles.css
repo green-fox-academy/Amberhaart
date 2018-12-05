@@ -1,0 +1,23 @@
+div.container{
+    height:300px ;
+    width:1200px ;
+    display: flex;
+}
+
+.item-green{
+    background: green;
+    flex-grow: 1;
+    order: 2;
+}
+
+.item-yellow{
+    background: yellow;
+    flex-grow: 2;
+    order: 1;
+    }
+
+.item-purple{
+    background: purple;
+    flex-grow: 1;
+    order: 0;
+}   
