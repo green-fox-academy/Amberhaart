@@ -1,7 +1,7 @@
 div.container{
     height:100%;
     width:900;
-    display: flex;
+    display: relative;
 }
 
 .item-green{

@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 700px;
+    height: 600px;
+    display: flex;
+    flex-flow: column;
+}
+
+.header {
+    background: purple;
+    display: flex;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+}
+
+.navigation-links {
+    background: cyan;
+    height: 30px;
+    width: 60px;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.content {
+    background: black;
+    flex-grow: 10;
+    display: flex;
+    flex-flow: row;
+}
+
+.main-content {
+    background: yellow;
+    flex-grow: 2;
+}
+.not-main-content {
+    background: green;
+    flex-grow: 1;
+}
