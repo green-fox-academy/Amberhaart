@@ -1,26 +1,20 @@
-div{
-    height:900px ;
-    width:900px ;
+div.container{
+    height:300px ;
+    width:1200px ;
     display: flex;
 }
 
 .item-green{
-    height: 300px;
-    min-width: 100px;
-    flex-grow: 1;
     background: green;
+    flex-grow: 1;
 }
 
 .item-yellow{
-    height: 300px;
-    min-width: 100px;
-    flex-grow: 2;
     background: yellow;
+    flex-grow: 2;
     }
 
 .item-purple{
-    height: 300px;
-    min-width: 100px;
-    flex-grow: 1;
     background: purple;
+    flex-grow: 1;
 }   
