@@ -5,14 +5,16 @@ let bigPicture = document.querySelector('.bigPicture');
 const leftButton = document.querySelector('.leftButton');
 const rightButton = document.querySelector('.rightButton');
 
-let id = 0;
+let id = 1;
 let idEnd = smallPictures.length-1;
 
 console.log(idEnd);
 
+let rightWasClicked = false;
+let leftWasClicked = false;
+
 rightButton.onclick = () => {
-
-
+    
     if (id >= smallPictures.length) {
         bigPicture.setAttribute('src', smallPictures[0].getAttribute('src'));
 
@@ -31,6 +33,8 @@ rightButton.onclick = () => {
 }
 
 leftButton.onclick = () => {
+
+
     if (id <= 0) {
         bigPicture.setAttribute('src', smallPictures[idEnd].getAttribute('src'));
 

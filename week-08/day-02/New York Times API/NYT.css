@@ -1,0 +1,9 @@
+body{
+    background-image: linear-gradient(-90deg, gray, ghostwhite);
+}
+
+.container{
+display:block;
+margin: 20px;
+font-family: 'Times New Roman', Times, serif
+}
