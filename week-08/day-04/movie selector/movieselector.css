@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    background: rgb(240, 240, 240);
+    border-radius: 5px;
+    height: 230px;
+    width: 400px;
+}
+
+.title {
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.selectedContainer {
+    display: flex;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.selectorContainer {
+    width: 100%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+select {
+    height: 40px;
+    width: 170px;
+    display: flex;
+    font-size: 20px;
+    color: blue;
+}
+
+p {
+    margin-right: 4px;
+}
