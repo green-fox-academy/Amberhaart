@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="login.css" />
+
+</head>
+
+<body>
+    <div class=container>
+        <form>
+            <div class=header>ACCOUNT LOGIN</div>
+            <div class=description>USERNAME</div>
+            <input type="email" id="email_input" name="email" required>
+            <div class=description>PASSWORD</div>
+            <input type="password" id="password_input" name="password" required>
+            <div class=reminder>
+                <p>Forgot Password?</p>
+            </div>
+            <button onclick="login()">Login</button>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+</html>
