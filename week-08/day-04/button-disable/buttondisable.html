@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Button Disable</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="buttondisable.css" />
+
+</head>
+
+<body>
+    <div class=container>
+        <form>
+            <div>
+                <p>What is your favorite pet?</p>
+                <input type="radio" id="radio1_input" name="pet" value="dog">
+                <label for="radio1_input">Dog</label>
+                <input type="radio" id="radio2_input" name="pet" value="cat">
+                <label for="radio2_input">Cat</label>
+                <input type="radio" id="radio3_input" name="pet" value="goldfish">
+                <label for="radio2_input">Victor the Goldfish</label>
+            </div>
+            <div>
+                <p>Do you want to sign up for cat facts?</p>
+                <input type="radio" id="radio4_input" name="catfact" value ="yes">
+                <label for="radio4_input">Yes</label>
+                <input type="radio" id="radio5_input" name="catfact" value ="no">
+                <label for="radio5_input">No</label>
+            </div>
+            <div class= buttonContainer>
+                <button class=catlove disabled>I love cats</button>
+                <button class=signup disabled>Sign up</button>
+            </div>
+        </form>
+    </div>
+    <script src="buttondisable.js"></script>
+</body>
+
+</html>
