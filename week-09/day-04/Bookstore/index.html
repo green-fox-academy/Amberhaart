@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bookstore</title>
+    <link rel="stylesheet" type="text/css" href="./static/styles.css">
+</head>
+<body>
+    <div class = 'flexDiv'>
+
+        <div class = 'myTable'></div>
+    </div>
+
+    <br>
+    <input id='authFilter' type="text">
+    <button onClick="authFilterMe()" >Filter by Author</button>
+    <br>
+    <input id='titleFilter' type="text">
+    <button onClick="titleFilterMe()" >Filter by Title</button>
+    <br>
+    <input id='categoryFilter' type="text">
+    <button onClick="categoryFilterMe()" >Filter by Category</button>
+    <br>
+    <input id='publisherFilter' type="text">
+    <button onClick="publisherFilterMe()" >Filter by Publisher</button>
+    <br>
+    <input id='pltFilter' type="text">
+    <button onClick="pltFilterMe()" >Filter by Price Lower Than</button>
+    <br>
+    <input id='pgtFilter' type="text">
+    <button onClick="pgtFilterMe()" >Filter by Price Greater Than</button>
+    <br>
+    <button onClick="filterAll()">Filter All</button>
+
+    <script src="./static/scripts.js"></script>
+</body>
+</html>

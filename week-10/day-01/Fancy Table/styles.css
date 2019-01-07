@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+
+
+    body {
+        background-color: cornflowerblue;
+        font-family: andale mono;
+        display: flex;
+        justify-content: center;
+      }
+      
+      table {
+        margin-top: 20px;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 20px;
+        color: rgb(82, 76, 76);
+        border: 1px solid black;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      
+      tr, td, th {
+        width: 300px;
+        border: 1px solid gray;
+        padding: 20px;
+      
+      }
+      
+      tr, td {
+        height: 40px;
+      }
+      
+      th {
+        background-color: black;
+        color: ghostwhite;
+        height: 50px;
+        font-weight: lighter;
+        border-bottom: 5px solid gray;
+        font-size: 25px;
+      }
+      
+      tbody>tr:nth-child(2n+1) {
+        background: lightgray;
+      }
+      
+      tbody>tr:nth-child(2n) {
+        background: white;
+      }
+      
+      .dollar::before {
+        content:"$";
+      }
+      
+      .dollar::after {
+        content:".00";
+      }
+      

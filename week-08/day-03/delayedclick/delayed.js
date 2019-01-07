@@ -13,10 +13,10 @@ container.appendChild(button);
 const delayTimer = () => {
     const underText = document.createElement('div');
     underText.style.display = 'block';
+    underText.style.fontSize = "20px";
     underText.textContent = "2 seconds have ellapsed";
     container.appendChild(underText);
+
 }
 
 //button.addEventListener('click', delayTimer);
-
-

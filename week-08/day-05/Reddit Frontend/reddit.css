@@ -1,0 +1,92 @@
+*{margin : 0;
+    padding : 0;}
+
+body {
+    background: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mainContainer {
+    height: 1000px;
+    width: 90%;
+}
+
+.secondaryContainer {
+    background: lightgray;
+    height: 2000px;
+    width: 100%;
+}
+
+.header {
+    max-height: 300px;
+    width: 100%;
+    overflow: hidden;
+    }
+
+.contentContainer {
+    height: 80%;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
+    display: flex;
+}
+
+.postContainer{
+    flex-grow: 2;
+    margin-right: 20px;
+}
+
+.sideContainer {
+    flex-grow: 1;
+    min-width: 350px;
+}
+
+.post {
+    background: ghostwhite;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+button {
+    background: cornflowerblue;
+    color: ghostwhite;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.about {
+    width: 100%;
+    height: 50px;
+    background: white;
+}
+
+.descriptor {
+    width: 100%;
+    height: 500px;
+    background: rgb(230, 230, 230);
+}
+
+.descriptorLine {
+    display:flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+}
+
+.aboutLine {
+    margin-top: 10px;
+}
+
+p {
+    margin-left: 15px;
+}
