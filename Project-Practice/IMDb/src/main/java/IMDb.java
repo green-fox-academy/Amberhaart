@@ -11,6 +11,8 @@ public class IMDb {
     public static void main(String[] args) {
         System.setProperty("webdriver.gecko.driver", "/Users/Roland/Gecko-drivers/Mozilla/geckodriver");
         WebDriver driver = new FirefoxDriver();
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, 5);
 
         driver.get("http://imdb.com");
