@@ -12,7 +12,9 @@ public class IMDbTest {
 
         driverTest.navigate().to("http://www.imdb.com");
 
-        Assert.assertTrue("correct webpage loads", driverTest.getCurrentUrl().endsWith(".com"));
+        Assert.assertTrue("correct webpage loads", driverTest.getCurrentUrl().endsWith(".com/"));
+
+        driverTest.quit();
     }
 
 }
